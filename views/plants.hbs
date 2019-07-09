@@ -1,0 +1,22 @@
+{{#each plantsData}}
+
+    <img src="{{image}}" alt="" width="200">
+
+    <h1>{{title}}</h1>
+    <em>{{name}}</em>
+
+    {{#each synonyms}}
+        <p>{{{this}}}</p>
+    {{/each}}
+
+    <br>
+
+    <a href="{{url}}">
+        {{url}}
+    </a>
+
+    <p>
+        {{summary}}
+    </p>
+
+{{/each}}
