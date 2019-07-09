@@ -12,7 +12,7 @@ var plantsRouter = require('./routes/plants');
 //Import the mongoose module
 var mongoose = require('mongoose');
 //Set up default mongoose connection
-var mongoDB = 'mongodb+srv://simgooder:December102012@plants-vygxb.mongodb.net/test?retryWrites=true&w=majority';
+var mongoDB = 'X';
 
 var app = express();
 
