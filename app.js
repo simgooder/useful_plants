@@ -9,10 +9,21 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var plantsRouter = require('./routes/plants');
 
+
 //Import the mongoose module
 var mongoose = require('mongoose');
+
 //Set up default mongoose connection
-var mongoDB = 'X';
+var mongoDB = 'mongodb+srv://simgooder:December102012@plants-vygxb.mongodb.net/test?retryWrites=true&w=majority';
+mongoose.connect(mongoDB, { useNewUrlParser: true });
+
+//Get the default connection
+var db = mongoose.connection;
+
+//Bind connection to error event (to get notification of connection errors)
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+
 
 var app = express();
 
@@ -51,13 +62,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-// Database -------------
-mongoose.connect(mongoDB, { useNewUrlParser: true });
-//Get the default connection
-var db = mongoose.connection;
-//Bind connection to error event (to get notification of connection errors)
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
 module.exports = app;

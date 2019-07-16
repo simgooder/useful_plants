@@ -5,7 +5,25 @@ const wiki = require('wikijs').default;
 
 var plantsList = [
     'Anaphalis',
-    'Yarrow'
+    'Yarrow',
+    'Rumex',
+    'Borage',
+    'Symphytum',
+    'Thyme',
+    'Rhubarb',
+    'Tropaeolum',
+    'Echinacea',
+    'Chives',
+    'Eruca sativa',
+    'Lupinus',
+    'Lavandula',
+    'Mentha',
+    'Alder',
+    'Arctium',
+    'Plantago',
+    'Chicory',
+    'Claytonia_sibirica',
+    'Asimina_triloba'
 ]
 
 var plantsData = [];
@@ -14,53 +32,63 @@ var plantsData = [];
 plantsList.forEach( function(plant) {
     wiki().page(plant)
     .then( page => {
-        setContent(page);
+        getContent(page);
     })
 })
 
 
 
-setContent = function(data) {
+getContent = function(data) {
 
-    var _summary,
-        _title,
-        _image,
-        _name,
-        _synonyms,
-        _url;
+    let update = {};
 
     data.info().then(a => {
-        _name = a.name
-        _synonyms = a.synonyms
-        // _synonyms.push(a.imageCaption);
+
+        if (a.name !== undefined) {
+            update.name = a.name;
+        }
+
+    }, (error) => {
+        console.log("ERROR ==> ", error)
     })
 
-    data.summary().then(a => { 
-        _summary = a 
-    })
-    data.mainImage().then(a => {
-        _image = a
+    data.summary().then(b => { 
+        
+        update.summary = b 
+
+    }, (error) => {
+        console.log("ERROR ==> ", error)
     })
 
-    _title = data.raw.title
-    _url = data.raw.canonicalurl
+    data.mainImage().then(c => {
 
-    plantsData.push({
-        title: _title,
-        url: _url,
-        summary: _summary,
-        image: _image,
-        name: _name,
-        synonyms: _synonyms
+        update.image = c
+        
+    }, (error) => {
+        console.log("ERROR ==> ", error)
     })
+
+    update.title = data.raw.title
+    update.url = data.raw.canonicalurl
+
+    setContent(update);
+
+}
+
+
+setContent = function(update) {
+
+    plantsData.push(update)
 
 }
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
     res.render('plants', { 
         plantsData: plantsData
     });
+
 });
 
 module.exports = router;

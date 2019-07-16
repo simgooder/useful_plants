@@ -1,22 +1,24 @@
 {{#each plantsData}}
 
-    <img src="{{image}}" alt="" width="200">
+    <div style="margin-bottom: 2em; margin-top: 2em; border-bottom: 1px solid grey; padding-bottom: 2em;">
 
-    <h1>{{title}}</h1>
-    <em>{{name}}</em>
+        <img src="{{image}}" alt="">
 
-    {{#each synonyms}}
-        <p>{{{this}}}</p>
-    {{/each}}
+        <br>
+        <strong>{{name}}</strong>
+        <br>
+        {{title}}
 
-    <br>
+        <br>
 
-    <a href="{{url}}">
-        {{url}}
-    </a>
+        <a href="{{url}}">
+            {{url}}
+        </a>
 
-    <p>
-        {{summary}}
-    </p>
+        <p>
+            {{summary}}
+        </p>
+
+    </div>
 
 {{/each}}

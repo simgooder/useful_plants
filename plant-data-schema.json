@@ -1,0 +1,67 @@
+{
+    "id": {
+        "scientific": "",
+        "common": [],
+        "images": [],
+
+        "habitat": {
+            "agriculture_zone": "",
+            "regions": [], // Regions for people have had success
+            "habitat": ""
+        },
+
+        "descriptions": {
+            "leaves": "",
+            "flowers": "",
+            "profile": "" // bush, shrub, plant, tree 
+        },
+
+        "references": [], // URLs to academic papers and such
+
+        "growth_habit": "", // "Perennial" or "Annual",
+
+        "tags": [
+            "perennial",
+            "annual",
+            "biennial",
+            "invasive",
+            "edible",
+            "zone N",
+            "native",
+            "domesticated",
+            "fruit",
+            "medicinal",
+            "vegetable",
+            "tree",
+            "shrub",
+            "bush"
+        ]
+    },
+
+    "uses": {
+        "edibility": "",
+        "wildcraft": "",
+        "medicinal": "",
+        "agricultural_value": "",
+        "animal_habitat": ""
+    },
+
+    "care": {
+        "planting_schedule": "",
+        "days-to-maturity": [], // based on zone
+        "caring_instructions": "",
+        "nutritional_needs": ""
+    },
+
+    "warnings": {
+        "poisonous": false,
+        "invasive": false,
+        "enemies": false
+    },
+
+    "related": {
+        "companions": [], // Companion planting recommendations
+        "similar_varieties": [] // Varieties that share categories
+    }
+
+}
