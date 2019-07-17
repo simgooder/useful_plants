@@ -5,58 +5,81 @@
         "images": [],
 
         "habitat": {
-            "agriculture_zone": "",
+            "hardiness_zone": "",
             "regions": [], // Regions for people have had success
             "habitat": ""
         },
 
-        "descriptions": {
-            "leaves": "",
+        "description": {
+            "leaves": {
+                "shape": "",
+                "color": "",
+                "habit": "" //"Deciduous" or "Evergreen"
+            },
             "flowers": "",
-            "profile": "" // bush, shrub, plant, tree 
+            "profile": "" // shrub, tree, groundcover, vine 
         },
 
         "references": [], // URLs to academic papers and such
 
-        "growth_habit": "", // "Perennial" or "Annual",
-
-        "tags": [
-            "perennial",
-            "annual",
-            "biennial",
-            "invasive",
-            "edible",
-            "zone N",
-            "native",
-            "domesticated",
-            "fruit",
-            "medicinal",
-            "vegetable",
-            "tree",
-            "shrub",
-            "bush"
-        ]
+        "growth_habit": "", // "Perennial" or "Annual", 
     },
 
+    "tags": [
+        "description.habitat.hardiness_zone",
+        "description.habitat.regions",
+        "description.leaves.habit",
+        "description.profile",
+        "uses.edible.potential",
+        "uses.wildcraft.potential",
+        "uses.medicinal.potential",
+        "uses.agricultural_value.potential",
+        "uses.animal_habitat.potential",
+        "care.soil_ph",
+        "care.light",
+        "care.moisture",
+        "warnings.poisonous",
+        "warnings.invasive",
+        "warnings.enemies"
+    ],
+
     "uses": {
-        "edibility": "",
-        "wildcraft": "",
-        "medicinal": "",
-        "agricultural_value": "",
-        "animal_habitat": ""
+        "edibile": {
+            "potential": true, //boolean
+            "notes": ""
+        },
+        "wildcraft": {
+            "potential": true, //boolean
+            "notes": "" 
+        },
+        "medicinal": {
+            "potential": true, // boolean
+            "notes": ""
+        },
+        "agricultural": {
+            "potential": true, //boolean
+            "notes": "" //ground cover, mulch, nitrogren fixer, dynamic accumulator, fruits, pest deflection, pollinator
+        }, 
+        "animal_habitat": {
+            "potential": true, //boolean
+            "notes": "" //birds, insects, amphibians, etc
+        }
     },
 
     "care": {
-        "planting_schedule": "",
-        "days-to-maturity": [], // based on zone
+        "planting_schedule": "", // based on zone
+        "days-to-maturity": [], // based on zone, define a system
         "caring_instructions": "",
-        "nutritional_needs": ""
+        "nutritional_needs": "",
+        "soil_ph": "", // 0 - 9
+        "light": "", // shade || low light || partial sun || full sun
+        "moisture": "" // drought tolerant || low moisture || high moisture || wet feet
     },
 
     "warnings": {
         "poisonous": false,
         "invasive": false,
-        "enemies": false
+        "enemies": false // What not to plant nearby, ie Walnut trees and juglone
     },
 
     "related": {
