@@ -35,6 +35,7 @@ var PlantIdSchema = new Schema({
     },
 
     description: {
+
         leaves: {
             shape: String,
             color: String,
@@ -43,7 +44,11 @@ var PlantIdSchema = new Schema({
                 enum: ['deciduous', 'evergreen']
             }
         },
+
         flowers: String,
+
+        seeds: String,
+
         profile: {
             type: String,
             enum: ['shrub', 'tree', 'groundcover', 'vine']
@@ -63,27 +68,27 @@ var PlantUsesSchema = new Schema({
 
     edible: {
         potential: Boolean,
-        notes: String
+        notes: [String]
     },
 
     wildcraft: {
         potential: Boolean,
-        notes: String
+        notes: [String]
     },
     
     medicinal: {
         potential: Boolean,
-        notes: String
+        notes: [String]
     },
 
     agricultural: {
         potential: Boolean,
-        notes: String
+        notes: [String]
     },
 
     animalHabitat: {
         potential: Boolean,
-        notes: String
+        notes: [String]
     }
 
 })
@@ -101,7 +106,9 @@ var PlantCareSchema = new Schema({
 
     caringInstructions: String,
 
-    nutritionalNeeds: String,
+    germination: String,
+
+    nutritionalNeeds: String, // needs loads of N, or P, or K
 
     soilPH: {
         type: Number,
