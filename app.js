@@ -7,10 +7,8 @@ var sassMiddleware = require('node-sass-middleware');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var plantsRouter = require('./routes/plants');
+var plantsRouter = require('./routes/plants').default;
 
-
-//Import the mongoose module
 var mongoose = require('mongoose');
 
 //Set up default mongoose connection

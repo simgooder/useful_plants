@@ -1,7 +1,8 @@
-var express = require('express');
-var router = express.Router();
+import { Router } from 'express';
+var router = Router();
 
-const wiki = require('wikijs').default;
+// Wikipedia stuff...
+import { wiki } from 'wikijs';
 
 var plantsList = [
     'Anaphalis',
@@ -37,7 +38,7 @@ plantsList.forEach( function(plant) {
 })
 
 
-
+// Build Wikipedia content structure...
 getContent = function(data) {
 
     let update = {};
@@ -75,7 +76,7 @@ getContent = function(data) {
 
 }
 
-
+// build wikipedia content structure
 setContent = function(update) {
 
     plantsData.push(update)
@@ -91,4 +92,4 @@ router.get('/', function(req, res, next) {
 
 });
 
-module.exports = router;
+export default router;
